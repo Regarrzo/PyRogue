@@ -15,11 +15,12 @@ def _extend_init(**extend_attributes):
 def render(char):
     def attribute(EntityType):
         EntityType.__init__ = _extend_init(char=char)(EntityType.__init__)
-        EntityType.attributes.add("render")
+        EntityType.attributes.add("consolerender")
 
         return EntityType
 
     return attribute
+
 
 def script(script):
     def attribute(EntityType):
