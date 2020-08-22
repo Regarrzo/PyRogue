@@ -33,7 +33,8 @@ class World:
                 if attribute in self.handlers:
                     self.handlers[attribute].handle(entity, self)
 
-game_world = World()
+
+game_world = World(None)
 
 def script_handler_function(entity, world):
     entity.update(world)

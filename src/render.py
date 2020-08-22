@@ -17,3 +17,5 @@ class ConsoleRenderAdapter(RenderAdapter):
     def render(self, world):
         for entity in chain(world.active_entities, world.frozen_entities):
             if "consolerender" in entity.attributes:
+                pass
+                
