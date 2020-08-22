@@ -2,6 +2,30 @@ from collections import deque
 from itertools import chain
 
 
+
+
+class SynchronizedDeque:
+    def __init__(self, iterable=None, connections=None):
+        self.data = deque()
+
+        if iterable:
+            for item in iterable:
+                self.data.append(item)
+
+        self.connections = connections
+        
+        if not connections:
+            self.connections = []
+    
+    def __delitem__(self, index):
+        del self.data[index]
+
+    def __iter__(self):
+        return iter(self.data)
+    
+    def remove(self, index):
+        pass
+    
 class AttributeHandler:
     def __init__(self, name, function):
         self.name = name
@@ -14,24 +38,26 @@ class AttributeHandler:
         self.function(entity, world)
 
 
+
+
 class World:
     def __init__(self, render_adapter):
+        # These entities will be handled
         self.active_entities = deque()
-        self.frozen_entities = deque()
-        self.dormant_entities = deque()
 
-        self.handlers = {}
+        # These entities won't be handled
+        self.inactive_entities = deque()
 
-        self.render_adapter = render_adapter
-    
-    def render(self):
-        self.render_adapter.render(self)
-    
+        self.handlers = None
+
+    def handle_entity(self, entity): 
+        
+        
+        pass
+
     def update(self):
         for entity in self.active_entities:
-            for attribute in entity.attributes:
-                if attribute in self.handlers:
-                    self.handlers[attribute].handle(entity, self)
+            self.handle_entity(entity)
 
 
 game_world = World(None)

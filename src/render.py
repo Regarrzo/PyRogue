@@ -18,4 +18,3 @@ class ConsoleRenderAdapter(RenderAdapter):
         for entity in chain(world.active_entities, world.frozen_entities):
             if "consolerender" in entity.attributes:
                 pass
-                
