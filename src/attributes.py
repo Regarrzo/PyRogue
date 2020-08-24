@@ -1,13 +1,22 @@
 
 
 def _extend_init(**extend_attributes):
+    """
+    Extend a classes init function by adding new attributes.
+
+    Parameters:
+
+    extend attributes: keyword arguments of the form name=default value to add
+    to the init method
+    """
+
     def extender(func):
         def __init__(self, *args, **kwargs):
             func(self, *args, **kwargs)
 
             for name, value in extend_attributes.items():
                 setattr(self, name, value)
-        
+
         return __init__
     return extender
 

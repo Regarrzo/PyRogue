@@ -2,8 +2,6 @@ from collections import deque
 from itertools import chain
 
 
-
-
 class SynchronizedDeque:
     def __init__(self, iterable=None, connections=None):
         self.data = deque()
@@ -13,31 +11,30 @@ class SynchronizedDeque:
                 self.data.append(item)
 
         self.connections = connections
-        
+
         if not connections:
             self.connections = []
-    
+
     def __delitem__(self, index):
         del self.data[index]
 
     def __iter__(self):
         return iter(self.data)
-    
+
     def remove(self, index):
         pass
-    
+
+
 class AttributeHandler:
     def __init__(self, name, function):
         self.name = name
         self.function = function
-    
+
     def __hash__(self):
         return hash(self.name)
-    
+
     def handle(self, entity, world):
         self.function(entity, world)
-
-
 
 
 class World:
@@ -50,9 +47,8 @@ class World:
 
         self.handlers = None
 
-    def handle_entity(self, entity): 
-        
-        
+    def handle_entity(self, entity):
+
         pass
 
     def update(self):
@@ -62,7 +58,9 @@ class World:
 
 game_world = World(None)
 
+
 def script_handler_function(entity, world):
     entity.update(world)
+
 
 script_handler = AttributeHandler("script", script_handler_function)

@@ -1,6 +1,14 @@
-import attributes
 
 def EntityType(name, attributes):
+    """
+    Create a new EntityType class with the specified name and 
+    attributes.
+
+    Parameters:
+
+    name: Default name of instances of the EntityType class
+    attributes: Iterable containing class decorators
+    """
 
     class Entity:
 
@@ -13,9 +21,3 @@ def EntityType(name, attributes):
         Entity = attribute(Entity)
 
     return Entity
-
-Sword = EntityType("Sword", (attributes.render("/"), attributes.script(None)))
-
-a = Sword()
-print(a.attributes)
-print(a.__dict__)

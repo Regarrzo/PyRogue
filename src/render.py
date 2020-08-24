@@ -4,7 +4,7 @@ from itertools import chain
 
 
 class RenderAdapter(abc.ABC):
-    
+
     @abc.abstractmethod
     def render(self, world):
         pass
