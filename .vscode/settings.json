@@ -1,5 +1,5 @@
 {
     "python.analysis.logLevel": "Information",
-    "python.linting.flake8Enabled": true,
-    "python.linting.pylintEnabled": false
+    "editor.fontLigatures": null,
+    "editor.formatOnSave": true
 }

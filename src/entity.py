@@ -1,10 +1,13 @@
-from util import Vec2
+from src.utility import Vec2
 
 
 class Entity:
-    def __init__(self, name, pos=Vec2()):
+    def __init__(self, name, pos=None):
         self.name = name
         self.pos = pos
+
+        if not pos:
+            self.pos = Vec2()
 
     def update(self, world):
         pass

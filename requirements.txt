@@ -1,4 +1,4 @@
 PySDL2
 pytest
-flake8
+pylint
 pre-commit

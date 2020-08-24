@@ -1,12 +1,8 @@
-"""
-Provides miscellaneous functionality, like vectors
-"""
+"""Provides miscellaneous functionality, like vectors."""
 
 
 class Vec2:
-    """
-    Implements all common operations on vectors in R2.
-    """
+    """Implements all common operations on vectors in R2."""
 
     def __init__(self, x=0, y=0):
         self.x = x
