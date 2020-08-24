@@ -1,5 +1,5 @@
 import pytest
-from src import sharedset
+from ..src import sharedset
 
 
 def test_sharedset():
