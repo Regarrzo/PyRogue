@@ -1,23 +1,13 @@
+from util import Vec2
 
-def EntityType(name, attributes):
-    """
-    Create a new EntityType class with the specified name and 
-    attributes.
 
-    Parameters:
+class Entity:
+    def __init__(self, name, pos=Vec2()):
+        self.name = name
+        self.pos = pos
 
-    name: Default name of instances of the EntityType class
-    attributes: Iterable containing class decorators
-    """
+    def update(self, world):
+        pass
 
-    class Entity:
-
-        attributes = set()
-
-        def __init__(self, name=name):
-            self.name = name
-
-    for attribute in attributes:
-        Entity = attribute(Entity)
-
-    return Entity
+    def on_event(self, event):
+        pass

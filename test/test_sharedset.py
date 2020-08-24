@@ -37,7 +37,7 @@ def test_sharedset():
 
     sub_objects.remove_subset(sub_sub_objects)
 
-    assert sub_sub_objects.master == None
+    assert sub_sub_objects.master is None
 
     objects.add(1)
     objects.add(2)

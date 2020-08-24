@@ -67,14 +67,14 @@ class Sharedset:
         """
 
         if self.master:
-            if not element in self.master:
+            if element not in self.master:
                 raise ValueError(
                     "Can't add element not present in master to subset")
 
         self._py_set.add(element)
 
         for subset in subsets:
-            if not subset in self.subsets:
+            if subset not in self.subsets:
                 raise ValueError("Can't specify set not flagged as subset.")
 
             subset.add(element)

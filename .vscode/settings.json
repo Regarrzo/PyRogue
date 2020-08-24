@@ -1,3 +1,5 @@
 {
-    "python.analysis.logLevel": "Information"
+    "python.analysis.logLevel": "Information",
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false
 }

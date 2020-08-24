@@ -1,1 +1,4 @@
 PySDL2
+pytest
+flake8
+pre-commit
