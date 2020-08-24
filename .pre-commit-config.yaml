@@ -1,5 +1,5 @@
 repos:
--   repo: https://gitlab.com/pycqa/flake8
+-   repo: https://github.com/pre-commit/mirrors-pylint
     rev: ''  # pick a git hash / tag to point to
     hooks:
     -   id: pylint
