@@ -5,6 +5,8 @@ class Vec2:
     """Implements all common operations on vectors in R2."""
 
     def __init__(self, x=0, y=0):
+        # x and y are perfectly fine variable names for a Vec2 class...
+        # pylint: disable=invalid-name
         self.x = x
         self.y = y
 

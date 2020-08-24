@@ -1,7 +1,7 @@
 """
-This module implements a shared set. 
+This module implements a shared set.
 
-It makes it possible to have a master set and subsets that reference 
+It makes it possible to have a master set and subsets that reference
 parts of the master set. It has the following properties:
 
 - Removing items from the master set will recursively remove them from all
@@ -31,8 +31,11 @@ class Sharedset:
         subsets (set[Sharedset]): Set of subsets
     """
 
-    def __init__(self, iterable=[], master=None):
-        self._py_set = set(iterable)
+    def __init__(self, iterable=None, master=None):
+        if iterable is None:
+            self._py_set = set()
+        else:
+            self._py_set = set(iterable)
 
         self.master = master
         self.subsets = set()
