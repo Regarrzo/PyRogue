@@ -6,6 +6,22 @@ and objects in the game.
 from src.utility import Vec2
 
 
+class Sprite:
+    def __init__(self, resource):
+        self.resource = resource
+
+    def draw(self, entity, context):
+        pass
+
+
+class AsciiSprite(Sprite):
+    def __init__(self, resource):
+        super(AsciiSprite, self).__init__(resource)
+
+    def draw(self, entity, context):
+        context.draw(self.resource, entity.pos)
+
+
 class Entity:
     """Base entity class for all entities in the game."""
 
@@ -51,4 +67,4 @@ class GraphicEntity(Entity):
         Args:
             context(RenderContext): The render context calling the draw method.
         """
-        self.sprite.draw(context)
+        self.sprite.draw(self, context)
